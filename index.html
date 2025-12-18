@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buenos días, mi amor 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ffd1e8, #fff0f7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .card {
+      background: white;
+      border-radius: 30px;
+      padding: 25px;
+      width: 90%;
+      max-width: 380px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(255,105,180,0.35);
+      border: 4px solid #ff9ecf;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff4f9a;
+      font-size: 2.2em;
+    }
+
+    p {
+      color: #ff6fae;
+      font-size: 1.1em;
+      margin: 12px 0;
+    }
+
+    .kitty {
+      width: 130px;
+      margin: 10px auto;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .foto {
+      width: 100%;
+      max-height: 480px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-top: 15px;
+      border: 3px solid #ffc0da;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .heart {
+  position: fixed;
+  bottom: -20px;
+  color: #ff69b4;
+  font-size: 18px;
+  animation: floatUp 6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+#startOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 228, 239, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.startBox {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 30px;
+  font-size: 1.2em;
+  color: #ff4f9a;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Buenos días, mi amor ☀️</h1>
+    <p>
+      Espero que hoy despiertes con una sonrisa 💕  
+      Quiero que sepas que te amo y pienso en ti 🥰
+    </p>
+
+    <!-- Hello Kitty -->
+    <img class="kitty" src="descarga.jpg" alt="Hello Kitty">
+
+    <!-- TU FOTO (FIJA) -->
+    <img class="foto" src="hola.jpeg" alt="Nuestra foto">
+
+    <!-- TU MÚSICA (FIJA) -->
+   <audio controls autoplay loop>
+      <source src="Danny Ocean - Corazón.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+  for (let i = 0; i < 15; i++) {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.textContent = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    heart.style.fontSize = (14 + Math.random() * 14) + "px";
+    document.body.appendChild(heart);
+  }
+</script>
+
+</body>
+</html>
